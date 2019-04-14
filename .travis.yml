@@ -15,7 +15,6 @@ before_install:
   - docker run -dit --name emscripten -v $(pwd):/src trzeci/emscripten-ubuntu bash
 
 script:
-  - docker exec emscripten bash -c "apt-get update;apt-get install file -y;make 2>&1 | tee log.txt"
-  - npm install
-  - make texlive.lst
-  - npm run test-local
+  - docker exec emscripten bash -c "apt-get update;apt-get install file -y;make"
+
+
